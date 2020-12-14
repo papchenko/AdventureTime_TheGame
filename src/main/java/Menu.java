@@ -16,9 +16,11 @@ public class Menu extends WindowApp {
         jMenuBar.add(options);
         jMenuBar.add(about);
         jFrame.setJMenuBar(jMenuBar);
+        jMenuBar.setBackground(Color.gray);
 
         JMenuItem newgame = file.add(new JMenuItem("New Game", new ImageIcon(getClass().getResource("Menu/newgame.png"))));
         newgame.setEnabled(false);
+        newgame.setAccelerator(KeyStroke.getKeyStroke("ctrl N"));
 
         file.addSeparator();
         JMenu listenmusic = new JMenu("Listen Music :)");
@@ -83,11 +85,15 @@ public class Menu extends WindowApp {
 
         JMenuItem language = options.add(new JMenuItem("Language", new ImageIcon(getClass().getResource("Menu/language.png"))));
         language.setEnabled(false);
+        language.setAccelerator(KeyStroke.getKeyStroke("ctrl L"));
 
-        about.add(new JMenuItem("Help", new ImageIcon(getClass().getResource("Menu/help.png"))));
+        JMenuItem help = about.add(new JMenuItem("Help", new ImageIcon(getClass().getResource("Menu/help.png"))));
+        help.setAccelerator(KeyStroke.getKeyStroke("ctrl H"));
+
         about.addSeparator();
+        JMenuItem contacts = about.add(new JMenuItem("Contacts", new ImageIcon(getClass().getResource("Menu/contacts.png"))));
+        contacts.setAccelerator(KeyStroke.getKeyStroke("ctrl C"));
 
-        about.add(new JMenuItem("Contacts", new ImageIcon(getClass().getResource("Menu/contacts.png"))));
 
 
         jFrame.revalidate();

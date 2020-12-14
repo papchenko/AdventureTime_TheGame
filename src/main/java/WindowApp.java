@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 
 public class WindowApp {
 
@@ -16,6 +17,7 @@ public class WindowApp {
         jFrame.setTitle(title);
         jFrame.setIconImage(icon.getImage());
         jFrame.add(jPanel);
+        jPanel.setBackground(Color.DARK_GRAY);
 
 
     }
@@ -23,6 +25,9 @@ public class WindowApp {
     void appMenu() {
         Menu menu = new Menu();
         menu.menu();
+
+        PicturesOnTop picOnTop = new PicturesOnTop();
+        picOnTop.paintComponent(jFrame.getGraphics());
 
     }
 }
